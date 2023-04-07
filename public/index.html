@@ -7,17 +7,35 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="kaurcev dev"
+      content="kaurcev web application"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>kaurcev dev</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Главная | kaurcev dev</title>
+    <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Александр Каурцев",
+          "url": "http://kaurcev.tk",
+          "sameAs": [
+              "http://vk.com/kaurcev_dev",
+              "https://twitter.com/kaurcev",
+              "https://tiktok.com/@kaurcev",
+              "https://boosty.to/kaurcev",
+              "https://t.me/kaurcev_dev",
+              "https://patreon.com/kaurcev",
+              "https://www.youtube.com/@kaurcev"
+          ]
+      }
+  </script>
   </head>
   <body>
     <header>
       <div class="header">
         <a href="/">
-          <img src="favicon.ico" alt="logo">
+          <img src="/favicon.ico" alt="logo">
         </a>
         
         <nav>
@@ -27,13 +45,13 @@
         </nav>
       </div>
     </header>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>В вашем браузере не работает JavaScript. Включите его для пользования сайта.</noscript>
     <div id="root"></div>
     <footer>
       <div class="footer">
         <div>
           <a href="/">
-            <img src="favicon.ico" alt="logo"> 
+            <img src="/favicon.ico" alt="logo"> 
           </a>
         </div>
         <div>
@@ -44,5 +62,34 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function(m, e, t, r, i, k, a) {
+          m[i] = m[i] || function() {
+              (m[i].a = m[i].a || []).push(arguments)
+          };
+          m[i].l = 1 * new Date();
+          for (var j = 0; j < document.scripts.length; j++) {
+              if (document.scripts[j].src === r) {
+                  return;
+              }
+          }
+          k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+      })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(88768984, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true
+      });
+  </script>
+
+  <noscript><div><img src="https://mc.yandex.ru/watch/88768984" style="position:absolute; left:-9999px;" alt="yandex" /></div></noscript>
+  <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyAOv3Wdhq3aJUPMlLIF3ok1QpB7mr1WvBU",
+      authDomain: "alexsandr-kaurcev.firebaseapp.com", databaseURL: "https://alexsandr-kaurcev-default-rtdb.europe-west1.firebasedatabase.app", projectId: "alexsandr-kaurcev", storageBucket: "alexsandr-kaurcev.appspot.com", messagingSenderId: "1095166323080",
+      appId: "1:1095166323080:web:2ead5cf0f691e27658b23d", measurementId: "G-YWQSGKG6LF" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app);
+  </script>
   </body>
 </html>
