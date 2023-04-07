@@ -1,124 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="kaurcev web application"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="%PUBLIC_URL%/ico/css/font-awesome.min.css" rel="stylesheet">
-    <title>Главная | kaurcev dev</title>
-    <meta name="revisit-after" content="4 days" />
-    <meta name="owner" content="skaurcev2004@yandex.ru" />
-    <meta name="author" lang="ru" content="Александр Каурцев" />
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Александр Каурцев - Личный сайт">
-    <meta property="og:description" content="Александр Каурцев - Веб разработчик и веб дизайнер.">
-    <meta property="og:url" content="http://kaurcev.tk">
-    <meta property="og:image" content="http://mini.s-shot.ru/1280x768/1000/png/?http://kaurcev.tk">
-    <meta property="og:site_name" content="Александр Каурцев">
-    <meta property="og:locale" content="ru_RU">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@kaurcev">
-    <meta property="twitter:creator" content="@kaurcev">
-    <script src="https://ezstat.ru/maina.js"></script>
-    <meta property="twitter:image:src" content="http://mini.s-shot.ru/1280x768/1000/png/?http:/kaurcev.tk">
-    <script type="application/ld+json">
-      {
-          "@context": "http://schema.org",
-          "@type": "Organization",
-          "name": "Александр Каурцев",
-          "url": "http://kaurcev.tk",
-          "sameAs": [
-              "http://vk.com/kaurcev_dev",
-              "https://twitter.com/kaurcev",
-              "https://tiktok.com/@kaurcev",
-              "https://boosty.to/kaurcev",
-              "https://t.me/kaurcev_dev",
-              "https://patreon.com/kaurcev",
-              "https://www.youtube.com/@kaurcev"
-          ]
-      }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-  <script src="https://pavel-lyakhov.ru/js/google-translate.js"></script>
-  <script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
-  </head>
-  <body>
-    <header>
-      <div class="header">
-        <a href="/">
-          <img src="/favicon.ico" alt="logo">
-        </a>
-        
-        <nav>
-          <a href="/">Проекты</a>
-          <a href="/">Обо мне</a>
-          <a href="/">Связаться</a>
-        </nav>
-      </div>
-    </header>
-    <noscript>В вашем браузере не работает JavaScript. Включите его для пользования сайта.</noscript>
-    <div id="root"></div>
-    <footer>
-      <div class="footer">
-        <div>
-          <a href="/">
-            <img src="/favicon.ico" alt="logo"> 
-          </a>
-        </div>
-        <div>
-          <h3>Документы</h3>
-            <p>Политика конфиденциальности</p>
-            <p>Отказ от ответственности</p>
-          <h3>Сайт на других языках</h3>
-          <p><span alt="ru" data-google-lang="ru">Русский</span></p>
-          <p><span alt="ru" data-google-lang="en">Английский</span></p>
-          <p><span alt="ru" data-google-lang="de">Немецкий</span></p>
-        </div>
-        <div>
-          <h3>Профили</h3>
-          <p><a href="//vk.com/kaurcev"> <i class="fa fa-vk" aria-hidden="true"></i> ВКонатакте</a></p>
-          <p> <a href="//kaurcev.t.me"> <i class="fa fa-telegram" aria-hidden="true"></i> Telegram</a></p>
-          <p><a href="//github.com"> <i class="fa fa-github" aria-hidden="true"></i> GitHub</a></p>
-          <p><a href="//www.youtube.com/@kaurcev"> <i class="fa fa-youtube-play" aria-hidden="true"></i> YouTube</a></p>
-          <p><a href="//twitter.com/kaurcev"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></p>
-      </div>
-      </div>
-    </footer>
-    <script>
-      (function(m, e, t, r, i, k, a) {
-          m[i] = m[i] || function() {
-              (m[i].a = m[i].a || []).push(arguments)
-          };
-          m[i].l = 1 * new Date();
-          for (var j = 0; j < document.scripts.length; j++) {
-              if (document.scripts[j].src === r) {
-                  return;
-              }
-          }
-          k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-      })
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-      ym(88768984, "init", {
-          clickmap: true,
-          trackLinks: true,
-          accurateTrackBounce: true,
-          webvisor: true
-      });
-  </script>
-
-  <noscript><div><img src="https://mc.yandex.ru/watch/88768984" style="position:absolute; left:-9999px;" alt="yandex" /></div></noscript>
-  <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyAOv3Wdhq3aJUPMlLIF3ok1QpB7mr1WvBU",
-      authDomain: "alexsandr-kaurcev.firebaseapp.com", databaseURL: "https://alexsandr-kaurcev-default-rtdb.europe-west1.firebasedatabase.app", projectId: "alexsandr-kaurcev", storageBucket: "alexsandr-kaurcev.appspot.com", messagingSenderId: "1095166323080",
-      appId: "1:1095166323080:web:2ead5cf0f691e27658b23d", measurementId: "G-YWQSGKG6LF" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app);
-  </script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенаправление</title>
+    <meta http-equiv="refresh" content="5; url=/">
+</head>
+<body>
+    
+</body>
 </html>
