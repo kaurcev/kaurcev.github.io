@@ -69,13 +69,13 @@ header{
   width: 100%;
   padding: 10px;
   background-color: #fff;
-  border-bottom: 1px solid #c2c2c2;
-  box-shadow: 0 0 10px 0 #21212124;
+  border-bottom: 1px solid #dedede;
 }
 .header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
   max-width: 1400px;
@@ -90,12 +90,16 @@ nav{
   justify-content: space-between;
   width: 100%;
   max-width: 300px;
+  flex-wrap: wrap;
 }
 nav a{
   text-decoration: none;
   color: #212121;
 }
-
+.footer a{
+  color: #212121;
+  text-decoration: none;
+}
 #root{
   width: 100%;
   max-width: 1400px;
@@ -105,16 +109,25 @@ nav a{
 }
 
 footer{
-  background-color: #212121;
-  color: #f2f4f8;
+  border-top: 1px solid #dedede;
+  background-color: #fff;
+  color: #212121;
   min-height: 20vh;
+  padding: 20px;
 }
 .footer{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
   align-items: center;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+
+.skiptranslate {
+  display: none !important;
 }
