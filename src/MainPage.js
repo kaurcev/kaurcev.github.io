@@ -1,8 +1,5 @@
 import logo from './logo.svg';
 import './MainPage.css';
-
-const off = "asd"
-
 function MainPage() {
     return ( 
         <main>
@@ -14,11 +11,10 @@ function MainPage() {
         </div>
         <div>
             <h2>Что планируется?</h2>
-            <p><i class="fa fa-cogs" aria-hidden="true"></i> Данное нововведение позволит повысить качество работы сайта и обеспечить новые функции.</p>
-            <p><i class="fa fa-paint-brush" aria-hidden="true"></i>Динаминчный контент будет оформлен в собственном UI интерфейсе</p>
+            <p><i className="fa fa-cogs" aria-hidden="true"></i> Данное нововведение позволит повысить качество работы сайта и обеспечить новые функции.</p>
+            <p><i className="fa fa-paint-brush" aria-hidden="true"></i>Динаминчный контент будет оформлен в собственном UI интерфейсе</p>
             <h3>Новая система ограничений</h3>
-            <p><i class="fa fa-ban" aria-hidden="true"></i> Планируется новая система ораничений, которая позволит работать с пользователями более детально</p>
-            <p id='IPCheck'>Система IPChecker {off}</p>
+            <p><i className="fa fa-ban" aria-hidden="true"></i> Планируется новая система ораничений, которая позволит работать с пользователями более детально</p>
         </div>
         </main>
     );
