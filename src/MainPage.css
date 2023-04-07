@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+}
+
+.hello{
+  min-height: 30vh;
+  background: linear-gradient(45deg, #8048f8, #f848d2);
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hello h1{
+  margin: 0px;
+}
+.hello p{
+  margin: 0px;
+}
