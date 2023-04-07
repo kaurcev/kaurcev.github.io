@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kaurcev-dev-reactjs/static/css/main.feb5e226.css",
-    "main.js": "/kaurcev-dev-reactjs/static/js/main.fe89d98b.js",
-    "static/js/787.731571f9.chunk.js": "/kaurcev-dev-reactjs/static/js/787.731571f9.chunk.js",
-    "static/media/logo.svg": "/kaurcev-dev-reactjs/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/kaurcev-dev-reactjs/index.html",
-    "main.feb5e226.css.map": "/kaurcev-dev-reactjs/static/css/main.feb5e226.css.map",
-    "main.fe89d98b.js.map": "/kaurcev-dev-reactjs/static/js/main.fe89d98b.js.map",
-    "787.731571f9.chunk.js.map": "/kaurcev-dev-reactjs/static/js/787.731571f9.chunk.js.map"
+    "main.css": "/static/css/main.feb5e226.css",
+    "main.js": "/static/js/main.f268e82f.js",
+    "static/js/787.731571f9.chunk.js": "/static/js/787.731571f9.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.feb5e226.css.map": "/static/css/main.feb5e226.css.map",
+    "main.f268e82f.js.map": "/static/js/main.f268e82f.js.map",
+    "787.731571f9.chunk.js.map": "/static/js/787.731571f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.feb5e226.css",
-    "static/js/main.fe89d98b.js"
+    "static/js/main.f268e82f.js"
   ]
 }
