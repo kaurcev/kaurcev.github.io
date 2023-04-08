@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './MainPage.css';
 
-const off = "asd"
 
 function ErrorPage() {
     return ( 
