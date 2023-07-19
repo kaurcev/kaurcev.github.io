@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Main";
+    src: url("/font/FuturaPT-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+*{
+    box-sizing: border-box;
+}
+html, body{
+    font-family: "Main";
+}
+main{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.banner{
+    background: linear-gradient(to top left, rgb(81, 36, 125), rgb(129, 45, 255));
+    padding: 10px;
+    min-height: 200px;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.banner h2, p{
+    margin: 2px;
+}
+.stack{
+padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-evenly;
+align-content: center;
+}
+.game{
+    background-color: #c5c5c5;
+    width: fit-content;
+    min-width: 140px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+}
