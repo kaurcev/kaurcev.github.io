@@ -6,12 +6,11 @@
 
 <script>
   function asd(){
-var email = document.getElementById("email").value;
-var password = document.getElementById("pass").value
+
 var asds;
 var data = {
-  email: email,
-  password: password
+  email: document.getElementById("email").value,
+  password: document.getElementById("pass").value
 };
 var boundary = String(Math.random()).slice(2);
 var boundaryMiddle = '--' + boundary + '\r\n';
@@ -27,9 +26,9 @@ xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary
 xhr.onreadystatechange = function() {
   if (this.readyState != 4) return;
   asds = this.responseText;
-   const obj = JSON.parse(asds);
+alert(asds)
+   var user = JSON.parse(asds);
 }
-
 xhr.send(body);
   }
   
