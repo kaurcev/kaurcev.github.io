@@ -6,8 +6,7 @@
 
 <script>
   function asd(){
-var user;
-var asds;
+let asds;
 var data = {
   email: document.getElementById("email").value,
   password: document.getElementById("pass").value
@@ -25,8 +24,7 @@ xhr.open('POST', 'https://kaurcev.space/mobile_api/login', true);
 xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
 xhr.onreadystatechange = function() {
   if (this.readyState != 4) return;
-  asds = this.responseText;
-   user = JSON.parse(asds);
+  asds = JSON.parse(this.responseText);
 }
 xhr.send(body);
   }
