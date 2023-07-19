@@ -6,7 +6,7 @@
 
 <script>
   function asd(){
-
+var user;
 var asds;
 var data = {
   email: document.getElementById("email").value,
@@ -26,8 +26,7 @@ xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary
 xhr.onreadystatechange = function() {
   if (this.readyState != 4) return;
   asds = this.responseText;
-alert(asds)
-   var user = JSON.parse(asds);
+   user = JSON.parse(asds);
 }
 xhr.send(body);
   }
