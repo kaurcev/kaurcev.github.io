@@ -8,34 +8,26 @@
   function asd(){
 var email = document.getElementById("email").value;
 var password = document.getElementById("pass").value
-
+var asds;
 var data = {
-  email: 'skaurcev2004@yandex.ru',
-  password: 'DeadBoy!'
+  email: email,
+  password: password
 };
-
 var boundary = String(Math.random()).slice(2);
 var boundaryMiddle = '--' + boundary + '\r\n';
 var boundaryLast = '--' + boundary + '--\r\n'
-
 var body = ['\r\n'];
 for (var key in data) {
-  // добавление поля
   body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + data[key] + '\r\n');
 }
-
 body = body.join(boundaryMiddle) + boundaryLast;
-
-// Тело запроса готово, отправляем
-
 var xhr = new XMLHttpRequest();
 xhr.open('POST', 'https://kaurcev.space/mobile_api/login', true);
-
 xhr.setRequestHeader('Content-Type', 'multipart/form-data; boundary=' + boundary);
 xhr.onreadystatechange = function() {
   if (this.readyState != 4) return;
-
-  alert( this.responseText );
+  asds = this.responseText;
+   const obj = JSON.parse(asds);
 }
 
 xhr.send(body);
