@@ -22,7 +22,10 @@ main{
     display: flex
 }
 h3{
-     mix-blend-mode: difference;
+    width: 100%;
+    background-color: #f2f4f8;
+    padding: 10px;
+    border-radius: 10px;
 }
 .cater{
     width: 20%;
