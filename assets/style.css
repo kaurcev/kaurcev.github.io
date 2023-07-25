@@ -21,7 +21,7 @@ main{
     padding: 10px;
     display: flex
 }
-main p{
+main h3{
      mix-blend-mode: difference;
 }
 .cater{
