@@ -6,44 +6,108 @@
 }
 *{
     box-sizing: border-box;
+    text-decoration: none;
 }
 html, body{
     font-family: "Main";
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
 }
+
 main{
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
     padding: 10px;
+    display: flex
 }
-.banner{
-    background: linear-gradient(to top left, rgb(81, 36, 125), rgb(129, 45, 255));
+.cater{
+    width: 20%;
     padding: 10px;
-    min-height: 200px;
-    color: #ffffff;
-    border-radius: 10px;
-    font-size: 20px;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
+    height: fit-content;
+    position: sticky;
+    top: 0px;
 }
-.banner h2, p{
+.main{
+    width: 80%;
+    padding: 10px;
+}
+
+@media (max-width: 600px){
+    .cater{
+        display: none;
+    }
+    .main{
+        width: 100%;
+        padding: 10px;
+    }
+    }
+
+.bt{
+    width: 100%;
+    padding: 10px;
+    background-color: #f2f4f8;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 #0000003b;
+}
+
+.logo{
+    max-height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo img{
+   height: 30px;
+}
+.banner{
+    width: 100%;
+    background: linear-gradient(45deg, red, orange);
+    min-height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+}
+.gameitem{
+    width: 100%;
+    min-width: 200px;
+    max-width: 200px;
+    background-color: #f2f4f8;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 2px;
 }
-.stack{
-padding: 10px;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-evenly;
-align-content: center;
+.gameitem img{
+    width: 100%;
 }
-.game{
-    background-color: #c5c5c5;
-    width: fit-content;
-    min-width: 140px;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px;
+.gameitem a.button{
+    background-color:crimson;
+    color: #fff;
+    padding: 5px;
+    border: 2px solid crimson;
+    border-radius: 5px;
+    text-align: center;
+}
+.games{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: auto;
+}
+.mini{
+    font-size: 12px;
 }
