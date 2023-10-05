@@ -3,41 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaurcev Space Apps</title>
-    <link href="/assets/style.css" rel="stylesheet">
+    <title>Kaurcev Space</title>
+    <link rel="stylesheet" href="/core/style.css">
+    <script type='application/ld+json'>
+        {
+            "@context": "http://www.schema.org",
+            "@type": "WebSite",
+            "name": "kaurcev space (Beta)",
+            "alternateName": "Kaurcev Space",
+            "url": "<?php echo fetch_or_get($cl["page_url"], $cl["config"]["url"]); ?>",
+            "sameAs": [
+                "https://vk.com/kaurcev.space",
+                "https://www.facebook.com/alexsandr.kaurcev",
+                "https://twitter.com/kaurcev",
+                "https://boosty.to/kaurcev",
+                "https://t.me/s/kaurcev_dev ",
+                "https://www.patreon.com/kaurcev"
+            ]
+        }
+        </script>
 </head>
 <body>
-    <main>
-        <div class="cater">
-            <div class="logo"> <img src="https://kaurcev.space/themes/default/statics/img/logo.png"> <span> Apps</span></div>
-            <a class="bt">Главная</a>
-        </div>
-        <div class="main">
-            <div class="banner">
-                <h2>Добро пожаловать!</h2>
-            </div>
-            <h3>Новинки</h3>
-            <div class="games">
-                <div class="gameitem">
-                    <img src="https://gamelayer.ru/gimg/344/webp/13692.webp">
-                    <p>Многоформенный забег</p>
-                    <p class="mini">Не указан</p>
-                    <a href="https://games.crazygames.com/en_US/muscle-shift/index.html" class="button">Играть</a>
-                </div>
-                 <div class="gameitem">
-                    <img src="https://nalock.fun/webclicker/sasha.jpg">
-                    <p>Бейте Сашу Талка!</p>
-                    <p class="mini">Artem Khabirov</p>
-                    <a href="https://nalock.fun/webclicker/" class="button">Играть</a>
-                </div>
-                <div class="gameitem">
-                    <img src="http://j33912ib.beget.tech/media/SvinOnline.ico">
-                    <p>SvinOnline</p>
-                    <p class="mini">Анатолий Чижиков</p>
-                    <a href="https://kaurcev.space/redirect.php?url=http://j33912ib.beget.tech" class="button">Играть</a>
-                </div>
-            </div>
-        </div>
-    </main>
+    <img src="/core/img/img1.gif" alt="">
+    <h1>Ой.. что-то пошло не так</h1>
+    <p>На данный момент работа сайта приостаовлена</p>
+    <p class="mini">Приносим свои извинения за предоставленные неудобства</p>
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(88768984, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/88768984" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <script defer type="module">
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import {
+        getAnalytics
+    } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+    const firebaseConfig = {
+        apiKey: "AIzaSyAOv3Wdhq3aJUPMlLIF3ok1QpB7mr1WvBU",
+        authDomain: "alexsandr-kaurcev.firebaseapp.com",
+        databaseURL: "https://alexsandr-kaurcev-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "alexsandr-kaurcev",
+        storageBucket: "alexsandr-kaurcev.appspot.com",
+        messagingSenderId: "1095166323080",
+        appId: "1:1095166323080:web:2ead5cf0f691e27658b23d",
+        measurementId: "G-YWQSGKG6LF"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    </script>
 </body>
 </html>
