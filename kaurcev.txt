@@ -1,0 +1,152 @@
+Кирюша:
+create nonclustered index Индекс_клиента 
+on Клиенты(Фамилия,Имя,Отчество,Номер_телефона,Номер_автомобиля)
+
+create procedure Добавление_прайса
+@name varchar(30), @money money, @period varchar(30)
+as 
+if exists (select*from Прайс_лист where Наименование_Услуги = @name)
+begin
+print 'Услуга ' + Convert(varchar,@name) + ' уже существует' 
+end
+else 
+begin
+insert into Прайс_лист(Наименование_Услуги,Стоимость_Услуги,Примерный_период_выполнения)
+values (@name,@money,@period)
+print 'Услуга ' + Convert(varchar,@name) + ' создана' 
+end
+
+execute Добавление_прайса 'Замена колодок','30000','5-7 рабочих дней'
+
+create view Услуги
+(Услуга,Стоимость,Период,Дата_и_время,Клиент,Менеджер,Общая_стоимость)
+as 
+select Прайс_лист.Наименование_Услуги,Прайс_лист.Стоимость_Услуги,Прайс_лист.Примерный_период_выполнения,Чеки.Дата_и_время_оформления,Клиенты.Фамилия,Менеджеры.Фамилия,Чеки.Общая_стоимость
+from Услуги_чеки inner join Прайс_лист on Услуги_чеки.Код_прайс_листа = Прайс_лист.Код_прайс_листа
+inner join Чеки on Услуги_чеки.Код_чека = Чеки.Код_чека
+inner join Клиенты on Чеки.Код_клиента = Клиенты.Код_клиента
+inner join Менеджеры on Чеки.Код_менеджера = Менеджеры.Код_менеджера
+
+select*from Услуги
+
+create trigger Общая_стоимость
+on Чеки 
+for insert,update
+as
+declare @id int,@id_k int,@id_p int,@sum1 money,@sum2 money,@sum3 money
+select @id = Код_чека from inserted
+select @id_k = Код_клиента from inserted 
+select @id_p = Код_прайс_листа from Услуги_чеки
+select @sum1 = Стоимость_услуги from Прайс_лист where Код_прайс_листа = @id_p
+select @sum2 = Общая_стоимость from inserted 
+select @sum3 = sum(Прайс_лист.Стоимость_услуги) 
+from Прайс_лист inner join Услуги_чеки on Прайс_лист.Код_прайс_листа = Услуги_чеки.Код_прайс_листа
+where Код_чека = @id
+begin 
+set @sum2 = @sum3
+update Чеки
+set Общая_стоимость = @sum2
+where Код_чека = @id
+end
+
+create table История_ремонта(
+Код_ремонта int identity(1,1) primary key,
+Клиент varchar(30),
+Менеджер varchar(30),
+Общая_стоимость money,
+Дата datetime)
+
+alter trigger История
+on Чеки
+for insert,update
+as
+declare @id int,@id_k int,@id_m int,@k varchar(30),@m varchar(30),@s money,@d datetime
+select @id = Код_чека from inserted
+select @id_k = Код_клиента from inserted 
+select @id_m = Код_менеджера from inserted
+select @k = Фамилия from Клиенты where Код_клиента = @id_k
+select @m = Фамилия from Менеджеры where Код_менеджера = @id_m
+select @s = Общая_стоимость from inserted
+select @d = Дата_и_время_оформления from inserted
+begin
+insert into История_ремонта(Клиент,Менеджер,Общая_стоимость,Дата)
+values (@k,@m,@s,@d)
+end
+
+create nonclustered index Индекс_менеджера 
+on Менеджеры(Фамилия,Имя,Отчество)
+
+alter procedure Добавить_товар
+@name varchar(50),@money money
+as 
+if exists (select*from Товары_салона where Наименование_товара = @name)
+begin 
+print 'Товар '+convert(varchar,@name)+' уже добавлен'
+end
+else 
+begin
+insert into Товары_салона(Наименование_товара,Стоимость_товара)
+values (@name,@money)
+print 'Товар '+convert(varchar,@name)+' добавлен'
+end
+
+execute Добавить_товар 'Смартфон','40000'
+
+create trigger Общая_стоимость
+on Продажи
+for insert,update
+as
+declare @id int,@id_t int,@id_u int,@id_t1 int,@id_u1 int,@sum money,@sum1 money,@sum2 money,@sum3 money,@sum4 money
+select @id = Код_продажи from inserted
+select @id_t1 = Код_товара from Товары_салона
+select @id_u1 = Код_услуги from Услуги_салона
+select @sum1 = Стоимость_товара from Товары_салона where Код_товара = @id_t1
+select @sum2 = Стоимость_услуги from Услуги_салона where Код_услуги = @id_u1
+select @sum = Общая_стоимость from inserted
+select @sum3 = sum(Товары_салона.Стоимость_товара) 
+from Товары_продажи inner join Товары_салона on Товары_продажи.Код_товара = Товары_салона.Код_товара
+inner join Продажи on Товары_продажи.Код_продажи = Продажи.Код_продажи
+select @sum4 = sum(Услуги_салона.Стоимость_услуги)
+from Продажи inner join Услуги_продажи on Продажи.Код_продажи = Услуги_продажи.Код_продажи
+inner join Услуги_салона on Услуги_продажи.Код_услуги = Услуги_салона.Код_услуги
+where Продажи.Код_продажи = @id
+begin 
+set @sum = @sum3+@sum4
+update Продажи
+set Общая_стоимость = @sum
+where Код_продажи = @id
+end
+
+create view История_продаж
+(Дата_и_время,Менеджер,Услуга,Товар,Стоимость)
+as 
+select Продажи.Дата_и_время_продажи,Менеджеры.Фамилия,Услуги_салона.Наименование_услуги,Товары_салона.Наименование_товара,Продажи.Общая_стоимость
+from Продажи inner join Услуги_продажи on Продажи.Код_продажи = Услуги_продажи.Код_продажи
+inner join Услуги_салона on Услуги_продажи.Код_услуги = Услуги_салона.Код_услуги
+inner join Товары_продажи on Продажи.Код_продажи = Товары_продажи.Код_продажи
+inner join Товары_салона on Товары_продажи.Код_товара = Товары_салона.Код_товара
+inner join Менеджеры on Продажи.Код_менеджера = Менеджеры.Код_менеджера
+
+select*from История_продаж
+
+create table История(
+Код_записи int identity(1,1) primary key,
+Дата_и_время datetime,
+Менеджер varchar(50),
+Товар varchar(50),
+Общая_стоимость money)
+
+create trigger Аудит
+on Продажи
+for insert,update
+as
+declare @id int,@id_m int,@id_t int,@date datetime,@m varchar(50),@t varchar(50),@sum money,@id_tp int
+select @id = Код_продажи from inserted
+select @id_m = Код_менеджера from inserted
+select @date = Дата_и_время_продажи from inserted
+select @m = Фамилия from Менеджеры where Код_менеджера = @id_m
+select @sum = Общая_стоимость from inserted
+begin 
+insert into История(Дата_и_время,Менеджер,Общая_стоимость)
+values (@date,@m,@sum)
+end
