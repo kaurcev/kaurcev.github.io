@@ -46,3 +46,49 @@ namespace teatre
         }
     }
 }
+=======================
+
+
+CREATE PROCEDURE [LOGIN]
+@LOGIN NVARCHAR(MAX), @PASSWORD NVARCHAR(MAX) AS
+BEGIN
+IF exists(SELECT [LOGIN], [PASSWORD] FROM [USERS] WHERE [LOGIN] =@LOGIN AND [PASSWORD] =  @PASSWORD)
+BEGIN
+SELECT *
+FROM [INFOUSER]
+WHERE ЛОГИН =@LOGIN AND ПАРОЛЬ =  @PASSWORD;
+END
+ELSE
+BEGIN
+PRINT 'GYLYAI DYADYA';
+END
+END
+GO
+
+EXECUTE [LOGIN] 'user1', '123456'
+GO
+
+
+CREATE PROCEDURE [UPDATE]
+@IDS INT, @CODES NVARCHAR(40), @NAMES NVARCHAR(150), @PREDS NVARCHAR(MAX)
+AS
+IF exists(SELECT * FROM COUNTRYS WHERE [ID] = @IDS)
+BEGIN
+update COUNTRYS set CODE = replace(@CODES, '',''),
+[NAME] = replace(@NAMES, '',''),
+[PRED] = replace(@PREDS, '','')
+where [ID] = @IDS;
+END
+ELSE
+BEGIN
+PRINT 'Код не существует'
+END
+GO
+
+
+
+
+============================
+
+
+
